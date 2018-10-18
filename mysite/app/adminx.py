@@ -7,9 +7,6 @@ from .models import IDC, Cabinet, Switch, Host, HostGroup, Port
 from xadmin.layout import Main, TabHolder, Tab, Fieldset, Row, Col, AppendedText, Side
 from xadmin.plugins.inline import Inline
 from xadmin.plugins.batch import BatchChangeAction
-from django.core.mail import send_mail  
-# send_mail('Subject here', 'Here is the message.', 'zxiong@fiberhome.com',
-#     ['zxiong@fiberhome.com'], fail_silently=False)
 
 
 @xadmin.sites.register(views.website.IndexView)

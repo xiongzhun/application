@@ -1,4 +1,3 @@
-Pillow
 uwsgi
 django-ckeditor
 asn1crypto==0.24.0

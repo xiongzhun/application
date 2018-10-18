@@ -9,7 +9,7 @@ from django.conf import settings
 
 # Create your views here.
 
-index_url = settings.PROJECT_ROOT
+index_url = settings.ROOT_URLCONF
 
 
 def host_listing(request):
