@@ -1,0 +1,311 @@
+{% load static %}
+{% include 'head.html' %}
+
+<div class="container-fluid-full">
+    <div class="row-fluid">
+        {% include 'sider.html' %}
+
+
+        <!-- start: Content -->
+        <div id="content" class="span10">
+            <div class="row-fluid">
+
+                <div class="box span4">
+                    <div class="box-header">
+                        <h2><i class="icon-list"></i>使用信息</h2>
+                        <div class="box-icon">
+                            <a href="#" class="btn-minimize"><i class="icon-chevron-up"></i></a>
+                            <a href="#" class="btn-close"><i class="icon-remove"></i></a>
+                        </div>
+                    </div>
+                    <div class="box-content">
+                        <ul class="tickets">
+                            <li class="ticket">
+                                    <div class="left">
+                                        <i class="icon-user"></i>
+                                        <span class="title">使用者</span>
+                                    </div>
+                                    <div class="right">
+                                        <span class="number"><span class="number">{{ user_detail.first_name }}{{ user_detail.last_name }}</span></span>
+                                    </div>
+                            </li>
+                             <li class="ticket">
+                                    <div class="left">
+                                        <i class="icon-user"></i>
+                                        <span class="title">状态</span>
+                                    </div>
+                                    <div class="right">
+                                        <span class="number"><span class="number">{{ host_detail.status }}</span></span>
+                                    </div>
+                            </li>
+                                                        <li class="ticket">
+
+                                    <div class="left">
+                                        <i class="icon-envelope"></i>
+                                        <span class="title">所属</span>
+                                    </div>
+                                    <div class="right">
+                                        <span class="number">{{ host_detail.host_group }}</span>
+                                    </div>
+                            </li>
+                            <li class="ticket">
+
+                                    <div class="left">
+                                        <i class="icon-envelope"></i>
+                                        <span class="title">用途</span>
+                                    </div>
+                                    <div class="right">
+                                        <span class="number">{{ host_detail.popurse }}</span>
+                                    </div>
+                            </li>
+                            <li class="ticket">
+
+                                    <div class="left">
+                                        <i class="icon-envelope"></i>
+                                        <span class="title">备注</span>
+                                    </div>
+                                    <div class="right">
+                                        <span class="number">{{ host_detail.info }}</span>
+                                    </div>
+                            </li>
+                                                                                    <li class="ticket">
+
+                                    <div class="left">
+                                        <i class="icon-star"></i>
+                                        <span class="title">BMC</span>
+                                    </div>
+                                    <div class="right">
+                                        <span class="number">{{ host_detail.ip }}</span>
+                                    </div>
+                            </li>
+                            <li class="ticket">
+
+                                    <div class="left">
+                                        <i class="icon-user"></i>
+                                        <span class="title">BMC账户</span>
+                                    </div>
+                                    <div class="right">
+                                        <span class="number">{{ host_detail.user }}</span>
+                                    </div>
+                            </li>
+                            <li class="ticket">
+
+                                    <div class="left">
+                                        <i class="icon-lock"></i>
+                                        <span class="title">BMC密码</span>
+                                    </div>
+                                    <div class="right">
+                                        <span class="number">{{ host_detail.password }}</span>
+                                    </div>
+                            </li>
+                            <li class="ticket">
+
+                                    <div class="left">
+                                        <i class="icon-star"></i>
+                                        <span class="title">管理IP</span>
+                                    </div>
+                                    <div class="right">
+                                        <span class="number">{{ host_detail.mgr_ip }}</span>
+                                    </div>
+                            </li>
+                             <li class="ticket">
+
+                                    <div class="left">
+                                        <i class="icon-user"></i>
+                                        <span class="title">系统账户</span>
+                                    </div>
+                                    <div class="right">
+                                        <span class="number">{{ host_detail.system_user }}</span>
+                                    </div>
+                            </li>
+                             <li class="ticket">
+
+                                    <div class="left">
+                                        <i class="icon-lock"></i>
+                                        <span class="title">系统密码</span>
+                                    </div>
+                                    <div class="right">
+                                        <span class="number">{{ host_detail.system_password }}</span>
+                                    </div>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div><!--/span-->
+
+                <div class="box span4">
+                    <div class="box-header">
+                        <h2><i class="icon-list"></i>位置信息与交换机</h2>
+                        <div class="box-icon">
+                            <a href="#" class="btn-minimize"><i class="icon-chevron-up"></i></a>
+                            <a href="#" class="btn-close"><i class="icon-remove"></i></a>
+                        </div>
+                    </div>
+                    <div class="box-content">
+                        <ul class="tickets">
+                            <li class="ticket">
+                                <a href="#">
+                                    <div class="left">
+                                        <span class="title">机房</span>
+                                    </div>
+                                    <div class="right">
+                                        <span class="number">{{ host_detail.idc }}</span>
+                                    </div>
+                                </a>
+                            </li>
+                             <li class="ticket">
+                                <a href="#">
+                                    <div class="left">
+                                        <span class="title">机柜</span>
+                                    </div>
+                                    <div class="right">
+                                        <span class="number">{{ host_detail.cabinet }}</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="ticket">
+                                    <div class="left">
+                                        <span class="title">U位</span>
+                                    </div>
+                                    <div class="right">
+                                        <span class="number">{{ host_detail.address_number }}</span>
+                                    </div>
+                            </li>
+                             {% for line in switch_list %}
+                                                        <li class="ticket">
+                                    <div class="left">
+                                        <span class="title">交换机名称</span>
+                                    </div>
+                                    <div class="right">
+                                        <span class="number">{{ line.name }}</span>
+                                    </div>
+                            </li>
+                                                        <li class="ticket">
+                                    <div class="left">
+                                        <span class="title">交换机IP</span>
+                                    </div>
+                                    <div class="right">
+                                        <span class="number">{{ line.ip }}</span>
+                                    </div>
+                            </li>
+                        {% endfor %}
+
+                        </ul>
+                    </div>
+                </div>
+                <div class="box span4">
+                    <div class="box-header">
+                        <h2><i class="icon-list"></i>网卡连接</h2>
+                        <div class="box-icon">
+                            <a href="#" class="btn-minimize"><i class="icon-chevron-up"></i></a>
+                            <a href="#" class="btn-close"><i class="icon-remove"></i></a>
+                        </div>
+                    </div>
+                    <div class="box-content">
+                        <ul class="tickets">
+                            {% for line in port_list %}
+                                    <li class="ticket">
+                                    <div class="left">
+                                        <span class="title">{{ line.name }}</span><br>
+                                    </div>
+                                    <div class="right">
+                                        <span class="number">{{ line.switch_port }}</span>
+                                    </div>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div><!--/row-->
+                        <div class="row-fluid">
+        <div class="box span12">
+                    <div class="box-header">
+                        <h2><i class="icon-list"></i>设备信息</h2>
+                        <div class="box-icon">
+                            <a href="#" class="btn-minimize"><i class="icon-chevron-up"></i></a>
+                            <a href="#" class="btn-close"><i class="icon-remove"></i></a>
+                        </div>
+                    </div>
+                    <div class="box-content">
+                        <ul class="tickets">
+                            <li class="ticket">
+                                    <div class="left">
+                                        <span class="title">SN</span>
+                                    </div>
+                                    <div class="right">
+                                        <span class="number">{{ host_detail.name }}</span>
+                                    </div>
+                            </li>
+                                                        <li class="ticket">
+                                    <div class="left">
+                                        <span class="title">品牌</span>
+                                    </div>
+                                    <div class="right">
+                                        <span class="number">{{ host_detail.brand }}</span>
+                                    </div>
+                            </li>
+                                                                        <li class="ticket">
+                                    <div class="left">
+                                        <span class="title">规格</span>
+                                    </div>
+                                    <div class="right">
+                                        <span class="number">{{ host_detail.model }}</span>
+                                    </div>
+                            </li>
+                             <li class="ticket">
+                                    <div class="left">
+                                        <span class="title">CPU规格</span>
+                                    </div>
+                                    <div class="right">
+                                        <span class="number">{{ host_detail.cpu }}</span>
+                                    </div>
+                            </li>
+                            <li class="ticket">
+                                    <div class="left">
+                                        <span class="title">内存规格</span>
+                                    </div>
+                                    <div class="right">
+                                        <span class="number">{{ host_detail.memory }}</span>
+                                    </div>
+                            </li>
+                                  <li class="ticket">
+                                    <div class="left">
+                                        <span class="title">硬盘规格</span>
+                                    </div>
+                                    <div class="right">
+                                        <span class="number">{{ host_detail.hard_disk }}</span>
+                                    </div>
+                            </li>
+                                                <li class="ticket">
+                                    <div class="left">
+                                        <span class="title">描述</span>
+                                    </div>
+                                    <div class="right">
+                                        <span class="number">{{ host_detail.description }}</span>
+                                    </div>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+                    </div><!--/row-->
+        </div><!--/fluid-row-->
+
+
+
+
+        <div class="modal hide fade" id="myModal">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">×</button>
+                <h3>Settings</h3>
+            </div>
+            <div class="modal-body">
+                <p>Here settings can be configured...</p>
+            </div>
+            <div class="modal-footer">
+                <a href="#" class="btn" data-dismiss="modal">Close</a>
+                <a href="#" class="btn btn-primary">Save changes</a>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+{% include 'footer.html' %}
