@@ -102,6 +102,8 @@ STATICFILES_FINDERS = (
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = '5=!nss_+^nvyyc_j(tdcf!7(_una*3gtw+_8v5jaa=)j0g^d_2'
 
+WSGI_APPLICATION = 'mysite.wsgi.application'
+
 MIDDLEWARE_CLASSES = (
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
