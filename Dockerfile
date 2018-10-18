@@ -39,7 +39,7 @@ RUN yum -y install epel-release && \
 WORKDIR $DOCKER_PROJECT
 COPY ./ ./
 
-RUN pip install -i https://pypi.tuna.tsinghua.edu.cn/simple -r requirements.txt
+RUN pip install -i https://pypi.doubanio.com/simple -r requirements.txt
 
 EXPOSE 8000
 RUN chmod u+x start_script
